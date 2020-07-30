@@ -1,27 +1,29 @@
 # github学习笔记
-## git配置
 
-1.基本配置
+1.在本地电脑中安装git
 
-git config --global user.name 'xxx'
+2.在github上创建个人仓库
 
-git config --global user.email 'xxx'
+3.复制仓库地址
 
-2.不同权限配置
-git config --local # 针对某仓库配置
+4.	在本地随便创建一个文件夹（注意路径不要中文）
 
-git config --add --local user.name 'xxx' # 增加一个新的用户名
+5.	进入文件中，鼠标右键如果安装成功git,菜单中会多出Git bash Here和Git GUI Here两个菜单，选择Git bash Here
 
-git config --global # 针对当前用户所有仓库，最常用
+6.	输入命令：
 
-git config --system # 对系统中所有用户都有效，基本不用
+（1）	从github中克隆：git clone https://github.com/Guo-Yingdong/im2latex.git
 
-3.当前存在用户信息
+（2）	进入该文件夹 cd im2latex
 
-分别查看不同水平上的配置情况
+（3）	将要上传的代码copy到文件中，继续输入命令：git status
 
-git config --list --local # 需要在具体仓库中使用
+（4）	将要要上传代码添加到本地仓库：git  add ./
 
-git config --list --global
+（5）	重复  :     git status   发现刚才都是绿色，说明文件已经添加了
 
-git config --list --system
+（6）	加上传代码注释（一定要这一步）：git commit -m "注释"
+
+（7）	最后将代码发往github:    git push -u origin master   
+
+查看仓库说明成功
