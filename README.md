@@ -121,10 +121,9 @@ Implementation有多个类型，这里只演示Java Class，其他类型可以�
 <ul> 
  <li> 在src/main/resources目录下创建META-INF文件夹，创建一个空的processes.xml文件。</li>
  <li> 将上面绘制audit.bpmn拷贝到下。 </li>
- <li>![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/10.png) </li>
-
  <li> 在应用引导类上添加@EnableProcessApplication注解，开启camunda自动配置。 </li>
 </ul>
+![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/10.png)
 
 ### 编写回调函数
 要实现流程回调Java代码，Java类必须实现org.camunda.bpm.engine.delegate.JavaDelegate接口
@@ -134,9 +133,9 @@ Implementation有多个类型，这里只演示Java Class，其他类型可以�
  <li> 启用应用 </li>
  <li>开启一个流程实例
   <p>访问http://localhost:8080/app/tasklist/default/#/开启流程实例。</p>
-  <p> <img,src="https://github.com/Guo-Yingdong/chain_bank/blob/master/img/11.png"> <p>
   <p>回到应用控制台可以看到Java回调类打印的字符串：</p>
-  ![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/12.png) 
   <p>流程结束</p>
  </li>
 </ul>
+![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/11.png)
+![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/12.png)
