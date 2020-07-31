@@ -40,6 +40,8 @@
 # 微服务
 以一个网上超市应用为例来说明这一过程。
  
+![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/1.png)
+
 所有应用都在一个数据库上操作，数据库出现性能瓶颈。特别是数据分析跑起来的时候，数据库性能急剧下降。
 
 微服务改造的过程实际上也是个抽象的过程。
@@ -54,6 +56,7 @@
 
 5.数据分析服务
 
+![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/2.png)
 
 这个阶段只是将服务分开了，数据库依然是共用的，所以一些烟囱式系统的缺点仍然存在：
 
@@ -79,7 +82,8 @@
 5.	测试方面：服务拆分后，几乎所有功能都会涉及多个服务。原本单个程序的测试变为服务间调用的测试。测试变得更加复杂。
 
 微服务的调用需要一个把关的东西，也就是网关。在调用者和被调用者中间加一层网关，每次调用时进行权限校验。另外，网关也可以作为一个提供服务接口文档的平台。
- 
+
+![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/3.png)
 
 
 
