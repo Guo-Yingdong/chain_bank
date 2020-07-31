@@ -123,7 +123,8 @@ Implementation有多个类型，这里只演示Java Class，其他类型可以�
  <li> 将上面绘制audit.bpmn拷贝到下。 </li>
  <li> 在应用引导类上添加@EnableProcessApplication注解，开启camunda自动配置。 </li>
 </ul>
-![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/10.png)
+
+![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/11.png)
 
 ### 编写回调函数
 要实现流程回调Java代码，Java类必须实现org.camunda.bpm.engine.delegate.JavaDelegate接口
@@ -137,5 +138,7 @@ Implementation有多个类型，这里只演示Java Class，其他类型可以�
   <p>流程结束</p>
  </li>
 </ul>
+
 ![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/11.png)
+
 ![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/12.png)
