@@ -142,3 +142,64 @@ Implementation有多个类型，这里只演示Java Class，其他类型可以�
 ![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/11.png)
 
 ![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/12.png)
+
+
+# docker
+
+## 什么是docker
+docker是一个开源的应用容器引擎，开发者可以打包自己的应用到容器里面，然后迁移到其他机器的docker应用中，可以实现快速部署。如果出现的故障，可以通过镜像，快速恢复服务。
+
+## 原理
+docker是利用Linux内核虚拟机化技术（LXC），提供轻量级的虚拟化，以便隔离进程和资源。LXC不是硬件的虚拟化，而是Linux内核的级别的虚拟机化，相对于传统的虚拟机，节省了很多硬件资源。
+
+NameSpace
+
+LXC是利用内核namespace技术，进行进程隔离。其中pid, net, ipc, mnt, uts 等namespace将container的进程, 网络, 消息, 文件系统和hostname 隔离开。
+
+Control Group
+
+LXC利用的宿主机共享的资源，虽然用namespace进行隔离，但是资源使用没有收到限制，这里就需要用到Control Group技术，对资源使用进行限制，设定优先级，资源控制等。
+
+## 内核支持
+
+在CentOS6.8是可以支持docker，但是有些特性无法使用，因此至少使用3.8的内核版本，建议是使用3.10版本以上。国内生产环境很多都是使用CentOS，所以一般使用CentOS7即可。
+
+当然如果是Ubuntu/Debian/Deepin系列的发行版本也是支持的。
+
+## 环境准备
+
+操作系统：CentOS 7.6.1810
+
+软件源：阿里云镜像（在阿里云镜像站上面可以找到docker-ce的软件源，使用国内的源速度比较快）
+
+安装docker-ce
+
+如果没有物理机，可以先使用虚拟机进行学习。操作系统安装，跳过（网上教程很多）。
+
+1、安装依赖
+
+docker依赖于系统的一些必要的工具，可以提前安装。
+
+yum install -y yum-utils device-mapper-persistent-data lvm2
+
+2、添加软件源
+
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+
+3、安装docker-ce
+
+yum clean all yum makecache fastyum -y install docker-ce
+
+4、启动服务
+
+通过systemctl启动服务
+
+systemctl start docker
+
+5、查看安装版本
+
+这样子就安装成功了，启动服务以后可以使用docker version查看一下当前的版本。
+
+docker version
+
+Client:Version: 18.09.2 API version: 1.39 Go version: go1.10.6 Git commit: 6247962 Built: Sun Feb 10 04:13:27 2019 OS/Arch: linux/amd64 Experimental: falseServer: Docker Engine - Community Engine: Version: 18.09.2 API version: 1.39 (minimum version 1.12) Go version: go1.10.6 Git commit: 6247962 Built: Sun Feb 10 03:47:25 2019 OS/Arch: linux/amd64 Experimental: false
