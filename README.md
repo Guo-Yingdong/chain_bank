@@ -133,9 +133,9 @@ Implementation有多个类型，这里只演示Java Class，其他类型可以�
  <li> 启用应用 </li>
  <li>开启一个流程实例
   <p>访问http://localhost:8080/app/tasklist/default/#/开启流程实例。</p>
-  ![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/11.png)
+  <p> <img,src="https://github.com/Guo-Yingdong/chain_bank/blob/master/img/11.png"> <p>
   <p>回到应用控制台可以看到Java回调类打印的字符串：</p>
   ![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/12.png) 
   <p>流程结束</p>
  </li>
- 
+</ul>
