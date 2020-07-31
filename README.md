@@ -85,11 +85,41 @@
 
 ![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/3.png)
 
+# Camunda流程引擎笔记
+## 一、下载安装
+### 下载
+点击https://camunda.com/download/modeler/下载camunda-modeler流程绘制工具
+![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/4.png)
 
+### 安装
+安装camunda-modeler流程绘制工具后打开可以看到以下界面：
+![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/5.png)
 
+## 二、绘制简单的流程
+### 新建一个BPMN文档
+双击圆圈添加注释双击圆圈添加注释。
+![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/6.png)
 
+### 创建一个 SERVICE TASK
+点击图中圆圈选择圆角方框。添加注释审核，然后点击小扳手选择
+![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/7.png)
 
+### 配置 SERVICE TASK
+![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/8.png)
 
+Implementation有多个类型，这里只演示Java Class，其他类型可以自行试试。
 
+### 绘制流程结束节点
+点击审核圆角方框，选择黑色圆圈，添加注释审核流程结束。
+![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/9.png)
 
+### 保存
+将上面绘制的流程保存为audit.bpmn。
 
+## 三、配置应用
+### 配置
+<ul> 
+ <li> 在src/main/resources目录下创建META-INF文件夹，创建一个空的processes.xml文件。</li>
+ <li> 将上面绘制audit.bpmn拷贝到下。 </li>
+ <p>![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/10.png) </p>
+ <li> 在应用引导类上添加@EnableProcessApplication注解，开启camunda自动配置。 </li>
