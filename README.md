@@ -121,7 +121,8 @@ Implementation有多个类型，这里只演示Java Class，其他类型可以�
 <ul> 
  <li> 在src/main/resources目录下创建META-INF文件夹，创建一个空的processes.xml文件。</li>
  <li> 将上面绘制audit.bpmn拷贝到下。 </li>
-![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/10.png)
+ <li>![image](https://github.com/Guo-Yingdong/chain_bank/blob/master/img/10.png) </li>
+
  <li> 在应用引导类上添加@EnableProcessApplication注解，开启camunda自动配置。 </li>
 </ul>
 
